@@ -1,0 +1,23 @@
+{
+  "name": "my_packer_project",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Louisshalam/node_packer.git"
+  },
+  "author": "louisshalam@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Louisshalam/node_packer/issues"
+  },
+  "homepage": "https://github.com/Louisshalam/node_packer#readme",
+  "private":true,
+  "dependencies": {
+
+  }
+}
