@@ -6,24 +6,28 @@
 
 var fs = require("fs");
 var util = require("util");
+var packerCmd = require('node-packer').packerCmdLine;
+var PackerFile = require('node-packer').PackerFile;
 
-var emails = fs.readFileSync('/Users/louisshalam/GitHub/Packer/node_packer/resources/emails.txt', {encoding:'utf8'});
-console.log(util.inspect(emails));
 
-var emailsArray = emails.split('\n');
+var nodeAmi = new PackerFile();
+nodeAmi.filePath='~/Desktop/Node-template.json';
+nodeAmi.build(function(err, output){
+        if(err){
+            console.log("Fiddlesticks! Something went wrong :-(", err);
+        } else {
+            console.log("The formatted output from the nodeAmi build:", output);
+        }
+    });
 
-console.log(emailsArray);
+var javaAmi = new PackerFile();
+javaAmi.filePath='~/Desktop/Java-template.json';
+javaAmi.build(function(err, output){
+        if(err){
+            console.log("Fiddlesticks! Something went wrong :-(", err);
+        } else {
+            console.log("The formatted output from the javaAmi build:", output);
+        }
+    });
 
-var domains = {};
 
-emailsArray.forEach(function(email, index, array) {
-    var splitEmail = email.split('@');
-    var domain = splitEmail[1];
-    if(domains[domain]) {
-        domains[domain]++;
-    } else {
-        domains[domain] = 1;
-    }
-});
-
-console.log(domains);
