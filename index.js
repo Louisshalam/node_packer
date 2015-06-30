@@ -19,7 +19,6 @@ var domains = {};
 emailsArray.forEach(function(email, index, array) {
     var splitEmail = email.split('@');
     var domain = splitEmail[1];
-    console.log(domain);
     if(domains[domain]) {
         domains[domain]++;
     } else {
